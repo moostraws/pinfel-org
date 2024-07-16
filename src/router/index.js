@@ -11,7 +11,8 @@ const router = createRouter({
                 {
                     path: '/',
                     name: 'dashboard',
-                    component: () => import('@/views/Dashboard.vue')
+                    component: () => import('@/views/Dashboard.vue'),
+                    meta: { title: 'Home - pinfel.org' }
                 },
                 {
                     path: '/uikit/formlayout',
@@ -170,6 +171,12 @@ const router = createRouter({
             component: () => import('@/views/pages/auth/Error.vue')
         }
     ]
+});
+
+router.beforeEach((to) => {
+    const { title } = to.meta;
+    const defaultTitle = 'pinfel.org';
+    document.title = title || defaultTitle;
 });
 
 export default router;
