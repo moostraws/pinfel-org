@@ -12,7 +12,7 @@ const router = createRouter({
                     path: '/',
                     name: 'dashboard',
                     component: () => import('@/views/Dashboard.vue'),
-                    meta: { title: 'Home - pinfel.org' }
+                    meta: { title: 'Home | pinfel.org' }
                 },
                 {
                     path: '/uikit/formlayout',
